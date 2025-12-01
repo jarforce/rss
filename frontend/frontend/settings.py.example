@@ -32,8 +32,9 @@ ALLOWED_HOSTS = ['*']
 # CSRF Settings - Allow trusted origins
 # Can be set via CSRF_TRUSTED_ORIGINS environment variable as comma-separated list
 # CSRF_TRUSTED_ORIGINS = []
-CSRF_TRUSTED_ORIGINS = ['https://rss.gimitec.com', 'http://localhost']
-
+CSRF_TRUSTED_ORIGINS = ['https://rss.gimitec.com']
+CSRF_ALLOWED_ORIGINS = ['https://rss.gimitec.com']
+CORS_ORIGINS_WHITELIST = ['https://rss.gimitec.com']
 if os.environ.get('CSRF_TRUSTED_ORIGINS'):
     CSRF_TRUSTED_ORIGINS = [origin.strip() for origin in os.environ.get('CSRF_TRUSTED_ORIGINS').split(',')]
 
