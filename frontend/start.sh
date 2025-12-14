@@ -10,9 +10,9 @@ sed -i -E -e "s/(DEBUG = ).*/\1True/" \
     -e "s/'ENGINE': 'django.db.backends.mysql'/'ENGINE': 'django.db.backends.postgresql'/" \
     ./frontend/frontend/settings.py
 
-sed -i -e 's/listen\ 80/listen\ '${WEB_PORT}'/g' \
-    -e 's/\[::\]:80/\[::\]:'${WEB_PORT}'/g' /etc/nginx/sites-available/default \
-    && service nginx reload
+#sed -i -e 's/listen\ 80/listen\ '${WEB_PORT}'/g' \
+#    -e 's/\[::\]:80/\[::\]:'${WEB_PORT}'/g' /etc/nginx/sites-available/default \
+#    && service nginx reload
 
 service nginx start > /dev/null
 
